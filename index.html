@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="fb.jpeg" alt="Facebook" width="40">
+                <img src="tw.jpeg" alt="Twitter" width="40">
+            </div>
+
+            
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <div class="check-box">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember password</label>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            
+            <form id="register" class="input-group" style="display: none;">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="email" class="input-field" placeholder="Email Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <div class="check-box">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login");
+        const registerForm = document.getElementById("register");
+        const btnIndicator = document.getElementById("btn");
+
+        function register() {
+            loginForm.style.display = "none";
+            registerForm.style.display = "block";
+            btnIndicator.style.transform = "translateX(110px)";
+        }
+
+        function login() {
+            loginForm.style.display = "block";
+            registerForm.style.display = "none";
+            btnIndicator.style.transform = "translateX(0)";
+        }
+
+        
+        login();
+    </script>
+</body>
+</html>
